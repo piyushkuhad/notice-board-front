@@ -1,0 +1,21 @@
+@import '../../../utils/color_variables.scss';
+
+.cm-create-post-trigger {
+  background-color: $baseWhite;
+  padding: 10px;
+  border-radius: 15px;
+
+  .cm-create-post-trigger-content {
+    justify-content: flex-start;
+    img {
+      width: 50px;
+      border-radius: 50%;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: $inactive;
+    padding-left: 15px;
+  }
+}

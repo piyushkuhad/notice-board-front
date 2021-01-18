@@ -1,0 +1,40 @@
+@import '../../utils/color_variables.scss';
+
+.cm-auth-page-container {
+  min-height: 100vh;
+
+  .cm-auth-left {
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 15px;
+    background-color: $baseWhite;
+    width: 40%;
+    align-self: stretch;
+
+    .cm-auth-logo {
+      width: 120px;
+      margin-bottom: 30px;
+    }
+
+    .cm-auth-switch-btn {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .cm-auth-right {
+    padding-left: 15px;
+    padding-right: 40px;
+    width: 60%;
+    text-align: center;
+
+    h3 {
+      font-size: 35px;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: $primaryColor;
+    }
+  }
+}

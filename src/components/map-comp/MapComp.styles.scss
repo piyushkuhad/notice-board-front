@@ -1,0 +1,41 @@
+@import '../../utils/color_variables.scss';
+
+.cm-map-comp-container {
+  .cm-map-comp-sidebar {
+    position: fixed;
+    width: 350px;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 100vh;
+    padding: 0 0 15px;
+    overflow: auto;
+    background-color: $baseWhite;
+  }
+
+  .cm-set-location-form {
+    .MuiSlider-root {
+      width: 95%;
+      margin-top: 40px;
+    }
+
+    .MuiSlider-markLabel {
+      font-size: 12px;
+    }
+
+    .MuiSlider-thumb {
+      .MuiSlider-valueLabel {
+        left: calc(-50% - 8px);
+
+        & > span {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .cm-map-comp-main-wrapper {
+    height: 100vh;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../utils/color_variables.scss';
+
+.cm-secondary-sidebar-container {
+  position: fixed;
+  width: 350px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  background-color: $baseWhite;
+  padding: 0 0 15px;
+  overflow: auto;
+
+  .cm-secondary-sidebar-top-nav {
+    padding-bottom: 0;
+
+    & > button {
+      margin-right: 10px;
+    }
+
+    .cm-inner-wrapper {
+      button + button {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .cm-featured-posts {
+    position: relative;
+
+    .cm-sidebar-menu-header {
+      padding-right: 65px;
+    }
+  }
+}

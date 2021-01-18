@@ -1,0 +1,286 @@
+@import './utils/color_variables.scss';
+@import './utils/breakPoints.scss';
+
+/*----------Scroll Bar-----------*/
+.cm-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.cm-scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.3);
+  -webkit-border-radius: 10px;
+  background: $lightGray;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+.cm-scroll:hover::-webkit-scrollbar-track {
+  visibility: visible;
+}
+
+/* Handle */
+.cm-scroll::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #bcc0c4;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+.cm-scroll:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+.cm-scroll::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/*----------Box Shadows-----------*/
+
+.box-shadow-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.box-shadow-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.box-shadow-3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.dark-mode .box-shadow-1 {
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12),
+    0 1px 2px rgba(255, 255, 255, 0.24);
+}
+
+.dark-mode .box-shadow-2 {
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.16),
+    0 3px 6px rgba(255, 255, 255, 0.23);
+}
+
+.dark-mode .box-shadow-3 {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.19),
+    0 6px 6px rgba(255, 255, 255, 0.23);
+}
+
+/*--------Global Classes-----------*/
+
+.cm-menu-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cm-pointer {
+  cursor: pointer;
+}
+
+.cm-page-container {
+  padding: 0 15px;
+}
+
+.dark-mode .dm-bg-light {
+  background-color: $secDark !important;
+}
+
+.dark-mode .dm-bg-dark {
+  background-color: $primaryDark !important;
+}
+
+.cm-page-center {
+  width: 90%;
+}
+
+.cm-sidebar-col {
+  padding: 10px 20px;
+}
+
+.cm-sidebar-logo {
+  img {
+    width: 100px;
+  }
+}
+
+.cm-txt-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*----Drop Down------*/
+
+.cm-more-op {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.cm-dropdown-small {
+  background-color: $baseWhite;
+  position: absolute;
+  left: auto;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+
+  .dark-mode & {
+    background-color: $primaryDark;
+  }
+
+  .cm-dropdown-op {
+    padding: 5px 15px;
+    display: block;
+    color: $neutralGray;
+
+    .dark-mode & {
+      color: $baseWhite;
+    }
+  }
+}
+
+.cm-more-op:hover .cm-dropdown-small {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/*-------------------Flex Styles--------------------------*/
+
+.cm-flex {
+  display: flex;
+}
+
+.cm-flex-sb {
+  justify-content: space-between;
+}
+
+.cm-flex-align-h {
+  justify-content: center;
+}
+
+.cm-flex-align-v {
+  align-items: center;
+}
+
+.cm-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.cm-flex-type-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cm-flex-type-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------Loader---------*/
+
+/*-----------Icon Style--------------*/
+
+.cm-icon {
+  fill: $neutralGray;
+  vertical-align: middle;
+
+  .dark-mode & {
+    fill: $dmDarkFontColor;
+  }
+}
+
+/*-----------DIALOG---------------*/
+
+#form-dialog-title {
+  .MuiTypography-root {
+    font-weight: 700;
+  }
+}
+
+.cm-dialog-info-content {
+  font-size: 16px;
+}
+
+/*-----------FORMS---------------*/
+
+.MuiOutlinedInput-input:-webkit-autofill {
+  background-color: transparent;
+  box-shadow: none;
+  font-size: 16px;
+  -webkit-box-shadow: 0 0 0 30px $baseWhite inset !important;
+}
+
+body.dark-mode .MuiOutlinedInput-input:-webkit-autofill {
+  background-color: transparent;
+  box-shadow: none;
+  font-size: 16px;
+  -webkit-box-shadow: 0 0 0 30px $primaryDark inset !important;
+}
+
+.MuiFormControl-root.cm-form-field,
+.cm-form-field {
+  margin-bottom: 20px;
+}
+
+.cm-form-label {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cm-main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: calc(100% - 64px);
+  margin-left: 64px;
+  padding: 30px 15px;
+}
+
+.cm-fw-btn {
+  width: 100%;
+}
+
+#root .cm-col-half {
+  width: calc(50% - 7.5px);
+  margin-right: 7.5px;
+
+  & + .cm-col-half {
+    margin-right: 0;
+    margin-left: 7.5px;
+  }
+}
+
+.transparent-bg {
+  background-color: transparent;
+}
+
+.cm-col-divider {
+  & > .cm-row-fluid {
+    width: auto;
+    margin: 0 -15px;
+
+    & > .cm-col-half {
+      width: calc(50% - 30px);
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.cm-not-present {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #999;
+}
+
+#root .cm-error-msg {
+  color: #f44336;
+}

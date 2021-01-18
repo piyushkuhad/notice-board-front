@@ -1,0 +1,42 @@
+.cm-image-slider-container {
+  .cm-image-slide-wrapper {
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+
+    .cm-image-slider-link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .cm-slide-content {
+      padding-left: 10px;
+
+      h4 {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 12px;
+        margin: 0px;
+      }
+    }
+  }
+
+  .cm-image-slider-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}

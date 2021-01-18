@@ -1,0 +1,49 @@
+@import '../../../utils/color_variables.scss';
+
+.cm-user-sidebar-container {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: $baseWhite;
+  padding: 0 0 15px;
+  overflow: auto;
+
+  .cm-sidebar-logo {
+    img {
+      width: 100px;
+    }
+  }
+
+  .cm-sidebar-user-info {
+    img {
+      width: 45px;
+    }
+
+    .cm-sidebar-user-info-content {
+      width: calc(100% - 77px);
+      padding: 0 10px;
+
+      h4 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: $inactive;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .cm-sidebar-user-info-options {
+      width: 32px;
+      padding: 4px;
+      align-self: start;
+    }
+  }
+}

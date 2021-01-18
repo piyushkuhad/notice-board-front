@@ -1,0 +1,59 @@
+@import '../../utils/color_variables.scss';
+
+.cm-sidebar-menu {
+  margin-bottom: 15px;
+
+  .cm-sidebar-menu-header {
+    margin-bottom: 10px;
+
+    h3 {
+      font-size: 18px;
+      font-weight: 900;
+      flex: 1;
+    }
+
+    a {
+      font-size: 12px;
+      padding-left: 5px;
+      font-weight: 700;
+      color: $primaryColor;
+    }
+  }
+
+  .cm-menu-ul > li > a {
+    color: $inactive;
+    font-size: 16px;
+    text-transform: none;
+    font-weight: 700;
+    justify-content: flex-start;
+    transition: color 300ms ease;
+    flex: 1;
+    min-width: 0;
+
+    .MuiButton-startIcon {
+      margin-left: 0;
+    }
+
+    .MuiButton-label {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .MuiButton-startIcon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: -2px;
+      }
+    }
+
+    &:hover {
+      color: $darkFontColor;
+    }
+
+    &.active {
+      background-color: rgba(0, 0, 0, 0.04);
+      color: $darkFontColor;
+    }
+  }
+}
