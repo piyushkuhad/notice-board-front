@@ -11,8 +11,12 @@ const SetLocation = (props) => {
   const query = useQuery();
 
   const lnglatObj = {
-    lng: parseFloat(query.get('lnglat').split(',')[0]),
-    lat: parseFloat(query.get('lnglat').split(',')[1]),
+    lng: query.get('lnglat')
+      ? parseFloat(query.get('lnglat').split(',')[0])
+      : null,
+    lat: query.get('lnglat')
+      ? parseFloat(query.get('lnglat').split(',')[1])
+      : null,
   };
 
   //console.log('lnglatObj', lnglatObj);
