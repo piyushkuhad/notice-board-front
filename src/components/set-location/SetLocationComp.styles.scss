@@ -1,0 +1,72 @@
+@import '../../utils/color_variables.scss';
+
+.cm-set-location-comp-container {
+  width: 350px;
+  padding: 0 0 15px;
+  height: 100vh;
+  overflow: auto;
+  background-color: $baseWhite;
+
+  & > * {
+    padding: 10px 20px;
+  }
+
+  .cm-saved-locations {
+    .cm-saved-location-btn {
+      justify-content: flex-start;
+      text-transform: none;
+      font-size: 16px;
+      border-bottom: 1px solid $lightGray;
+
+      .MuiButton-startIcon {
+        flex-direction: column;
+        color: $inactive;
+
+        .cm-saved-loc-radius {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .cm-set-location-comp-sidebar {
+    position: fixed;
+    width: 350px;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    height: 100vh;
+    padding: 0 0 15px;
+    overflow: auto;
+    background-color: $baseWhite;
+  }
+
+  .cm-set-location-form {
+    .MuiSlider-root {
+      width: 95%;
+      margin-top: 40px;
+    }
+
+    .MuiSlider-markLabel {
+      font-size: 12px;
+    }
+
+    .MuiSlider-thumb {
+      .MuiSlider-valueLabel {
+        left: calc(-50% - 8px);
+
+        & > span {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .cm-set-location-comp-main-wrapper {
+    height: 100vh;
+    width: calc(100% - 350px);
+    margin-left: 350px;
+    position: relative;
+  }
+}

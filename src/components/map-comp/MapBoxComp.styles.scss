@@ -1,0 +1,65 @@
+@import url('https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css');
+@import '../../utils/color_variables.scss';
+
+.cm-map-box-container {
+  .cm-map-box-sidebar {
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: $baseWhite;
+    padding: 0 0 15px;
+    overflow: auto;
+
+    & > * {
+      padding: 10px 20px;
+    }
+
+    .cm-current-loc-address {
+      h4 {
+        font-weight: 600;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .cm-map-wrapper {
+    width: calc(100% - 350px);
+    margin-left: 350px;
+    position: relative;
+    height: 100vh;
+  }
+
+  .mapContainer {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .cm-marker {
+    position: absolute;
+    top: calc(50% - 16px);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    z-index: 99999;
+  }
+
+  .sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+  }
+}

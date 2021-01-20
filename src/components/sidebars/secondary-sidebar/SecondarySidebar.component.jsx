@@ -9,6 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 import MessageIcon from '@material-ui/icons/Message';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import ExploreIcon from '@material-ui/icons/Explore';
+import Drawer from '@material-ui/core/Drawer';
 
 import '../Sidebars.styles.scss';
 import './SecondarySidebar.styles.scss';
@@ -20,6 +21,7 @@ import slide1 from '../../../assets/images/slide1.jpg';
 import slide2 from '../../../assets/images/slide2.jpg';
 import slide3 from '../../../assets/images/slide3.jpg';
 import slide4 from '../../../assets/images/slide4.jpg';
+import SetLocationComp from '../../set-location/SetLocationComp.component';
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -82,6 +84,19 @@ const initialLocations = [
 ];
 
 const SecondarySidebar = () => {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+  const toggleDrawer = (val) => (event) => {
+    if (
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setDrawerOpen(val);
+  };
+
   return (
     <div className="cm-secondary-sidebar-container cm-scroll">
       <div className="cm-secondary-sidebar-top-nav cm-flex-type-1 cm-sidebar-col">
@@ -122,7 +137,11 @@ const SecondarySidebar = () => {
       <div className="cm-secondary-sidebar-header cm-sidebar-col cm-flex-type-1">
         <SearchBox />
         <Tooltip title="Advanced Search">
-          <IconButton component={Link} to="/set-location" size="medium">
+          <IconButton
+            //component={Link} to="/set-location"
+            onClick={toggleDrawer(true)}
+            size="medium"
+          >
             <ExploreIcon />
           </IconButton>
         </Tooltip>
@@ -146,6 +165,9 @@ const SecondarySidebar = () => {
           ))}
         </ul>
       </div>
+      <Drawer anchor={'right'} open={drawerOpen} onClose={toggleDrawer(false)}>
+        <SetLocationComp closeHandler={toggleDrawer} />
+      </Drawer>
     </div>
   );
 };
