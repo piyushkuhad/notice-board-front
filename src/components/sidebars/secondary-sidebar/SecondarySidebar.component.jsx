@@ -17,11 +17,12 @@ import SearchBox from '../../search-box/SearchBox.component';
 import LocationItem from '../../location-item/LocationItem.component';
 import ImageSlider from '../../image-slider/ImageSlider.component';
 import sampleAvatar from '../../../assets/images/worker.png';
-import slide1 from '../../../assets/images/slide1.jpg';
-import slide2 from '../../../assets/images/slide2.jpg';
-import slide3 from '../../../assets/images/slide3.jpg';
-import slide4 from '../../../assets/images/slide4.jpg';
 import SetLocationComp from '../../set-location/SetLocationComp.component';
+import { initialLocations } from '../../../assets/data/demoData';
+import { useSelector } from 'react-redux';
+import PopperComp from '../../popper/PopperComp.component';
+import NotificationItem from '../../popper/notification-item/NotificationItem.component';
+import MessageItem from '../../popper/message-item/MessageItem.component';
 
 const StyledBadge = withStyles((theme) => ({
   badge: {
@@ -52,38 +53,13 @@ const StyledBadge = withStyles((theme) => ({
   },
 }))(Badge);
 
-const initialLocations = [
-  {
-    locationName: 'Gurgaon Society Watch',
-    totalMembers: '5.6M',
-    isSubscribed: false,
-    imgSrc: slide3,
-    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    locationName: 'R.K Puram Society Watch',
-    totalMembers: '10M',
-    isSubscribed: true,
-    imgSrc: slide2,
-    title: 'Dolor sit amet, consectetur adipiscing elit.',
-  },
-  {
-    locationName: 'Shahdara Superbikers Group',
-    totalMembers: '500',
-    isSubscribed: false,
-    imgSrc: slide1,
-    title: 'Lorem ipsum dolor sit amet, elit.',
-  },
-  {
-    locationName: 'Dwarka',
-    totalMembers: '4.8M',
-    isSubscribed: false,
-    imgSrc: slide4,
-    title: 'Lorem ipsum, consectetur adipiscing elit.',
-  },
-];
-
 const SecondarySidebar = () => {
+  const dialogState = useSelector((state) => state.app.dialog);
+  const [badgeCount, setBadgeCount] = React.useState({
+    msg: 90,
+    notification: 16,
+  });
+
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const toggleDrawer = (val) => (event) => {
@@ -113,20 +89,37 @@ const SecondarySidebar = () => {
           </StyledBadge>
         </IconButton>
         <div className="cm-inner-wrapper cm-flex-type-1">
-          <Tooltip title="Messages">
-            <IconButton aria-label="Messages" size="medium">
+          {/* <Tooltip title="Messages">
+            <IconButton ref={msgDrawerRef} aria-label="Messages" size="medium">
               <Badge badgeContent={90} color="secondary">
                 <MessageIcon />
               </Badge>
             </IconButton>
-          </Tooltip>
-          <Tooltip title="Notifications">
+          </Tooltip> */}
+          {/* Message Popper */}
+          <PopperComp
+            badgeCount={badgeCount.msg}
+            ariaLabel="Messages"
+            icon={<MessageIcon />}
+          >
+            <MessageItem />
+            <MessageItem />
+          </PopperComp>
+          <PopperComp
+            badgeCount={badgeCount.notification}
+            ariaLabel="Notifications"
+            icon={<NotificationsIcon />}
+          >
+            <NotificationItem />
+            <NotificationItem />
+          </PopperComp>
+          {/* <Tooltip title="Notifications">
             <IconButton aria-label="Notifications" size="medium">
               <Badge badgeContent={16} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
-          </Tooltip>
+          </Tooltip> */}
           <Tooltip title="Dark Mode">
             <IconButton aria-label="Enable dark mode" size="medium">
               <Brightness4Icon />
@@ -159,7 +152,7 @@ const SecondarySidebar = () => {
         </div>
         <ul className="cm-menu-ul">
           {initialLocations.map((el) => (
-            <li>
+            <li key={el.locationName}>
               <LocationItem data={el} key={el.name} />
             </li>
           ))}

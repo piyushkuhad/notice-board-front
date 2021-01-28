@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import MapBoxComp from '../../components/map-comp/MapBoxComp.component';
-import SetLocationComp from '../../components/set-location/SetLocationComp.component';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
