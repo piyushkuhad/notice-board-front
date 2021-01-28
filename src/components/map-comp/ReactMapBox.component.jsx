@@ -3,7 +3,7 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import React, { useState, useRef, useCallback } from 'react';
 import MapGL from 'react-map-gl';
 import Geocoder from 'react-map-gl-geocoder';
-import { MAP_BOX_ACCESS_KEY } from '../../utils/env_var';
+import { MAP_BOX_ACCESS_KEY } from '../../utils/env_variables';
 
 const MAPBOX_TOKEN = MAP_BOX_ACCESS_KEY;
 
