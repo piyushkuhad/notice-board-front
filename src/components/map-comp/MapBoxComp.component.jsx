@@ -11,10 +11,12 @@ import EditIcon from '@material-ui/icons/Edit';
 
 import './MapBoxComp.styles.scss';
 import darkLogo from '../../assets/images/NB_logo_dark.png';
-import { MAP_BOX_ACCESS_KEY } from '../../utils/env_variables';
+
+//import { MAP_BOX_ACCESS_KEY } from '../../utils/env_variables';
+
 import pinIcon from '../../assets/images/pin.png';
 
-mapboxgl.accessToken = MAP_BOX_ACCESS_KEY;
+mapboxgl.accessToken = process.env.REACT_APP_MAP_BOX_ACCESS_KEY;
 
 const MapBoxComp = (props) => {
   const [loc, setLoc] = React.useState({
