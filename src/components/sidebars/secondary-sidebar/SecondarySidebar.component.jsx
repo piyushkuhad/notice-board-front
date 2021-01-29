@@ -54,6 +54,12 @@ const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 
 const SecondarySidebar = () => {
+  console.log(
+    'Var',
+    process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+    process.env.REACT_APP_MAP_BOX_ACCESS_KEY,
+    process.env.NODE_ENV
+  );
   const dialogState = useSelector((state) => state.app.dialog);
   const [badgeCount, setBadgeCount] = React.useState({
     msg: 90,
